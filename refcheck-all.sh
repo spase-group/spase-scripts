@@ -21,7 +21,7 @@ for ITEM in ${FOLDER}/*; do
     fi
 # Perform refcheck if folder
     if [[ -d "$ITEM" ]]; then
-        cd "$ITEM"
+        cd "${ITEM}:"
         spase-refcheck -a "$ITEM" -t $NOHEADER -r -u -i ${OPTIONS} .
         cd ..
     fi
