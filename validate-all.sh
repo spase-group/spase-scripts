@@ -19,9 +19,6 @@ for ITEM in ${FOLDER}/*; do
     fi
 # Perform refcheck if folder
     if [[ -d "$ITEM" ]]; then
-        echo "${ITEM}:"
-        cd "$ITEM"
-        spase-validate -r .
-        cd ..
+        spase-validate -r ${ITEM}
     fi
 done
