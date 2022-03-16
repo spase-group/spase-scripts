@@ -14,11 +14,12 @@ OPTIONS=${2:-}
 
 for ITEM in ${FOLDER}/*; do
 # Skip certain folders
-    if [[ "$ITEM" == "Deprecated" || "$ITEM" == "Quarantined" || "$ITEM" == "testing" ]]; then
+    if [[ "$ITEM" == */Deprecated || "$ITEM" == */Quarantined || "$ITEM" == */testing ]]; then
       continue;
     fi
 # Perform refcheck if folder
     if [[ -d "$ITEM" ]]; then
-        spase-validate -r ${ITEM}
+	echo "# ${ITEM}"
+        spase-validate -r ${OPTIONS} "${ITEM}"
     fi
 done
