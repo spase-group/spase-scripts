@@ -150,8 +150,10 @@ var mailOptions = {
   attachments: attachments
 };
 
-Console.log("Sending:")
-console.log(mailOptions);
+if(options.verbose) {
+  console.log("Sending:")
+  console.log(mailOptions);
+}
 
 transporter.sendMail(mailOptions, function(error, info){
   if (error) {
