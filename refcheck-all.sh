@@ -16,7 +16,7 @@ OPTIONS=${2:--u -i}
 NOHEADER=""
 for ITEM in ${FOLDER}/*; do
 # Skip certain folders
-    if [[ "$ITEM" == "Deprecated" || "$ITEM" == "Quarantined" || "$ITEM" == "testing" ]]; then
+    if [[ "$ITEM" == */Deprecated || "$ITEM" == */Quarantined || "$ITEM" == */testing ]]; then
       continue;
     fi
 # Perform refcheck if folder
