@@ -11,7 +11,7 @@
 # Author: Todd King - 2022-03-14
 
 FOLDER=${1:-.}
-OPTIONS=${2:-}
+OPTIONS=${2:--u -i}
 
 NOHEADER=""
 for ITEM in ${FOLDER}/*; do
@@ -22,7 +22,7 @@ for ITEM in ${FOLDER}/*; do
 # Perform refcheck if folder
     if [[ -d "$ITEM" ]]; then
         cd "${ITEM}"
-        spase-refcheck -a "$ITEM" -t $NOHEADER -r -u -i ${OPTIONS} .
+        spase-refcheck -a "$ITEM" -t $NOHEADER -r ${OPTIONS} .
         cd ..
     fi
     NOHEADER="-b"
